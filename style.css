@@ -1,0 +1,335 @@
+/* --- VARIABLES ET BASES --- */
+:root {
+    --primary: #0f172a;      /* Bleu nuit */
+    --accent: #0066ff;       /* Bleu vif */
+    --success: #16a34a;      /* Vert succès */
+    --bg: #ffffff;           /* Fond blanc */
+    --card-bg: #f8fafc;      /* Gris très clair pour les cartes */
+    --border: #e2e8f0;       /* Couleur des bordures */
+    --text: #334155;         /* Couleur du texte principal */
+}
+
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+body { 
+    font-family: 'Inter', system-ui, -apple-system, sans-serif; 
+    background: var(--bg); 
+    color: var(--text); 
+    scroll-behavior: smooth; 
+    line-height: 1.6; 
+}
+
+.container { 
+    max-width: 900px; 
+    margin: 0 auto; 
+    padding: 0 20px; 
+}
+
+/* --- BARRE DE NAVIGATION --- */
+.navbar { 
+    position: sticky; 
+    top: 0; 
+    background: rgba(255, 255, 255, 0.95); 
+    backdrop-filter: blur(10px); 
+    border-bottom: 1px solid var(--border); 
+    z-index: 1000; 
+    padding: 12px 0; 
+}
+
+.nav-content { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+.logo { 
+    font-weight: 800; 
+    font-size: 1.1rem; 
+    color: var(--primary); 
+}
+
+.nav-links { 
+    list-style: none; 
+    display: flex; 
+    gap: 15px; 
+    align-items: center;
+}
+
+.nav-links a { 
+    text-decoration: none; 
+    color: var(--text); 
+    font-weight: 500; 
+    font-size: 0.85rem; 
+    transition: 0.2s; 
+}
+
+.nav-links a:hover { 
+    color: var(--accent); 
+}
+
+.nav-highlight { 
+    background: var(--accent); 
+    color: white !important; 
+    padding: 7px 14px; 
+    border-radius: 6px; 
+}
+
+/* --- HEADER (HERO) --- */
+.hero { 
+    padding: 80px 0 40px; 
+}
+
+.hero h1 { 
+    font-size: 2.8rem; 
+    color: var(--primary); 
+    letter-spacing: -1px; 
+}
+
+.subtitle { 
+    font-size: 1.2rem; 
+    color: var(--accent); 
+    font-weight: 600; 
+    margin-top: 5px; 
+}
+
+/* --- SECTIONS ET CARTES --- */
+section { 
+    padding: 60px 0; 
+    border-bottom: 1px solid #f1f5f9; 
+}
+
+.section-title { 
+    font-size: 1.3rem; 
+    color: var(--primary); 
+    margin-bottom: 30px; 
+    display: flex; 
+    align-items: center; 
+    gap: 12px; 
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+}
+
+.card { 
+    background: var(--card-bg); 
+    border: 1px solid var(--border); 
+    padding: 25px; 
+    border-radius: 12px; 
+    transition: 0.3s; 
+}
+
+.grid { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 20px; 
+}
+
+.exp-header { 
+    display: flex; 
+    justify-content: space-between; 
+    margin-bottom: 5px; 
+}
+
+.date { 
+    font-size: 0.85rem; 
+    color: var(--accent); 
+    font-weight: 700; 
+}
+
+.job-title { 
+    font-weight: 700; 
+    color: var(--primary); 
+    margin-bottom: 15px; 
+    font-size: 0.95rem; 
+}
+
+/* --- LISTES À PUCES --- */
+.bullet-list { 
+    list-style: none; 
+}
+
+.bullet-list li { 
+    margin-bottom: 8px; 
+    position: relative; 
+    padding-left: 20px; 
+    font-size: 0.9rem; 
+}
+
+.bullet-list li::before { 
+    content: "→"; 
+    color: var(--accent); 
+    position: absolute; 
+    left: 0; 
+    font-weight: bold; 
+}
+
+/* --- BADGES LOGOS --- */
+.tech-logos { 
+    margin-top: 15px; 
+    display: flex; 
+    gap: 10px; 
+    flex-wrap: wrap; 
+}
+
+.tech-logos img { 
+    height: 18px; 
+}
+
+/* --- COMPÉTENCES --- */
+.skills-grid { 
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px; 
+}
+
+.skill-group h4 { 
+    margin-bottom: 15px; 
+    font-size: 0.85rem; 
+    color: var(--primary); 
+    text-transform: uppercase; 
+    border-left: 3px solid var(--accent); 
+    padding-left: 10px; 
+}
+
+.skill-group li { 
+    list-style: none;
+    margin-bottom: 10px; 
+    font-size: 0.9rem; 
+    display: flex; 
+    align-items: center; 
+    gap: 10px; 
+}
+
+.skill-group i { 
+    color: var(--accent); 
+    width: 16px; 
+    text-align: center; 
+}
+
+/* --- CERTIFICATIONS & BOUTONS PDF --- */
+.cert-flex { 
+    display: flex; 
+    gap: 20px; 
+    align-items: center; 
+}
+
+.cert-icon-big { 
+    font-size: 2.5rem; 
+    color: #f59e0b; 
+}
+
+.btn-certif { 
+    display: inline-flex; 
+    align-items: center; 
+    gap: 8px; 
+    margin-top: 15px; 
+    padding: 6px 12px; 
+    background: white; 
+    border: 1px solid var(--border); 
+    border-radius: 6px; 
+    color: var(--accent); 
+    text-decoration: none; 
+    font-size: 0.8rem; 
+    font-weight: 600; 
+    transition: 0.3s; 
+}
+
+.btn-certif:hover { 
+    background: var(--accent); 
+    color: white; 
+}
+
+/* --- FORMULAIRE DE CONTACT --- */
+.contact-container {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 40px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 0.9rem;
+    background: var(--card-bg);
+}
+
+.btn-submit {
+    background: var(--accent);
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-submit:hover {
+    background: #0052cc;
+    transform: translateY(-2px);
+}
+
+.direct-link {
+    text-decoration: none;
+    color: var(--text);
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    margin-bottom: 10px;
+    transition: 0.3s;
+}
+
+.direct-link:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+/* --- MESSAGE DE SUCCÈS --- */
+.success-message {
+    background-color: var(--success);
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 600;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- FOOTER --- */
+footer { 
+    text-align: center; 
+    padding: 50px; 
+    color: #94a3b8; 
+    font-size: 0.8rem; 
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+    .grid, .skills-grid, .contact-container { 
+        grid-template-columns: 1fr; 
+    }
+    .nav-links { 
+        display: none; 
+    }
+}
